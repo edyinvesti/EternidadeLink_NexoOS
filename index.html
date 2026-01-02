@@ -3,60 +3,103 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternidade Link | NexoOS</title>
+    <title>Eternidade Link | Neural Network</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <style>
-        body { margin: 0; background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
-        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle, #001a33 0%, #000 100%); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', -apple-system, sans-serif; overflow: hidden; }
         
-        h2 { color: #00f2ff; letter-spacing: 5px; font-size: 14px; margin-bottom: 20px; }
-        h1 { font-size: 3rem; margin: 10px 0; color: #fff; text-transform: uppercase; font-weight: 800; }
-        .desc { font-size: 1.1rem; color: #8b949e; max-width: 600px; line-height: 1.6; margin-bottom: 40px; }
-        
-        .stats-container { display: flex; gap: 30px; margin-bottom: 40px; }
-        .stat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(0,242,255,0.2); padding: 20px; border-radius: 12px; width: 140px; }
-        .stat-val { display: block; font-size: 22px; font-weight: bold; color: #00f2ff; }
-        .stat-label { font-size: 10px; color: #555; text-transform: uppercase; margin-top: 5px; }
+        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; }
 
-        .btn-entrar { 
-            background: #00f2ff; color: #000; padding: 18px 50px; border-radius: 5px; 
-            text-decoration: none; font-weight: bold; letter-spacing: 2px; 
-            box-shadow: 0 0 20px rgba(0,242,255,0.4); transition: 0.3s;
+        .content { 
+            position: relative; z-index: 2; height: 100vh; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: radial-gradient(circle at center, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
         }
-        .btn-entrar:hover { transform: scale(1.05); background: #fff; }
 
-        .nav-links { margin-top: 30px; }
-        .nav-links a { color: #444; text-decoration: none; font-size: 12px; margin: 0 15px; text-transform: uppercase; }
-        .nav-links a:hover { color: #8b949e; }
+        .project-label { 
+            font-size: 12px; letter-spacing: 8px; color: #00f2ff; margin-bottom: 10px; 
+            text-transform: uppercase; opacity: 0.8; font-weight: 300;
+        }
+
+        h1 { 
+            font-size: 4rem; font-weight: 200; letter-spacing: -2px; margin-bottom: 20px;
+            background: linear-gradient(180deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .mission { 
+            font-size: 18px; color: #8b949e; max-width: 600px; text-align: center; 
+            line-height: 1.6; font-weight: 300; margin-bottom: 50px;
+        }
+
+        .grid-stats { 
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-value { display: block; font-size: 28px; font-weight: 200; color: #fff; margin-bottom: 5px; }
+        .stat-desc { font-size: 10px; color: #00f2ff; text-transform: uppercase; letter-spacing: 2px; }
+
+        .btn-nexus {
+            padding: 20px 60px; border: 1px solid #fff; color: #fff;
+            text-decoration: none; font-size: 14px; letter-spacing: 4px;
+            transition: all 0.4s; position: relative; overflow: hidden;
+        }
+
+        .btn-nexus:hover {
+            background: #fff; color: #000; box-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+
+        .explorer-link { 
+            margin-top: 40px; color: #444; text-decoration: none; 
+            font-size: 11px; letter-spacing: 2px; transition: 0.3s;
+        }
+        .explorer-link:hover { color: #00f2ff; }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h2>PROJECT: ETERNIDADE LINK</h2>
+    <div id="particles-js"></div>
+
+    <div class="content">
+        <span class="project-label">Project: Eternidade Link</span>
         <h1>Conectando a Próxima Era.</h1>
-        <p class="desc">A primeira rede descentralizada focada na evolução e conexão neural.<br>1 milhão de mentes em uma única malha.</p>
+        <p class="mission">A primeira rede descentralizada focada na evolução e conexão neural. 1 milhão de mentes em uma única malha.</p>
 
-        <div class="stats-container">
-            <div class="stat-card">
-                <span class="stat-val">5.8GHz</span>
-                <span class="stat-label">Frequência Estável</span>
+        <div class="grid-stats">
+            <div class="stat-item">
+                <span class="stat-value">5.8GHz</span>
+                <span class="stat-desc">Frequência</span>
             </div>
-            <div class="stat-card">
-                <span class="stat-val">NEXO</span>
-                <span class="stat-label">Protocolo Seguro</span>
+            <div class="stat-item">
+                <span class="stat-value">NEXO</span>
+                <span class="stat-desc">Protocolo</span>
             </div>
-            <div class="stat-card">
-                <span class="stat-val">1M</span>
-                <span class="stat-label">Objetivo de Mentes</span>
+            <div class="stat-item">
+                <span class="stat-value">1M</span>
+                <span class="stat-desc">Objetivo</span>
             </div>
         </div>
 
-        <a href="Dashboard/index.html" class="btn-entrar">ENTRAR NO NEXO_OS</a>
-
-        <div class="nav-links">
-            <a href="Network/explorer.html">Visualizar Rede Global</a>
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-        </div>
+        <a href="Dashboard/index.html" class="btn-nexus">ENTRAR NO NEXO_OS</a>
+        
+        <a href="Network/explorer.html" class="explorer-link">ABRIR MAPA DE REDE GLOBAL</a>
     </div>
+
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#00f2ff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.2 },
+                "size": { "value": 2 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.1, "width": 1 },
+                "move": { "enable": true, "speed": 1 }
+            },
+            "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
+        });
+    </script>
 </body>
 </html>
